@@ -80,7 +80,7 @@ if (require.main === module) {
   // NB: entry_point below is replaced during the build process.
   var mainScript = process.argv[1] = 'TEMPLATED_entry_point';
   try {
-    module.constructor._load(mainScript, this, /*isMain=*/true);
+    module.constructor._load(mainScript, module, /*isMain=*/true);
   } catch (e) {
     console.error('failed to load main ', e.stack || e);
     process.exit(1);
